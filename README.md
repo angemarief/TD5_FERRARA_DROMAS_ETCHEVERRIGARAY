@@ -1,1 +1,2 @@
-# TD5_FERRARA_DROMAS_ETCHEVERRIGARAY
+Alan / DROMAS : https://www.kaggle.com/code/kainetrt/predicting-fraud-in-financial-payment-ser-fbe7ad/edit
+
