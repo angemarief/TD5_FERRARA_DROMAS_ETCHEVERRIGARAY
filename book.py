@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+import pandas as pd
+import numpy as np
+
+>>>>>>> pandas
 class Book:
     
     def __init__(self,name,liste_order=[]):
@@ -7,7 +13,11 @@ class Book:
         self.liste_buy=[]
         self.index=0
 
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> pandas
     def insert_buy (self,q,p, type_ordre="BUY"):
         self.index=self.index+1
         ordre=Order(q,self.index,p,type_ordre)
@@ -31,10 +41,27 @@ class Book:
             self.liste_execute.pop(i-1)
         print("Book on "+self.name)
         
+<<<<<<< HEAD
         for i in self.liste_sell:
             print("          "+str(i.type_ordre)+" "+ str(i.quantite) +"@"+str(i.prix) + " id="+str(i.ID))
         for i in self.liste_buy:
             print("          "+str(i.type_ordre)+" "+ str(i.quantite) +"@"+str(i.prix) + " id="+str(i.ID))
+=======
+        liste_pandas_sell=[]
+        for i in self.liste_sell:
+            liste_pandas_sell.append([i.type_ordre,i.quantite,i.prix,i.ID])
+        if liste_pandas_sell!=[]:
+            df1 = pd.DataFrame(np.array(liste_pandas_sell),columns=['type', 'quantity', 'price','ID'])
+            print(df1.to_string(index=False))
+        
+
+        liste_pandas_buy=[]
+        for i in self.liste_buy:
+            liste_pandas_buy.append([i.type_ordre,i.quantite,i.prix,i.ID])
+        if liste_pandas_buy!=[]:
+            df2 = pd.DataFrame(np.array(liste_pandas_buy),columns=['type', 'quantity', 'price','ID'])
+            print(df2.to_string(index=False))
+>>>>>>> pandas
         print("----------------------------------")
 
     def check_execute(self):
@@ -69,3 +96,20 @@ class Order:
 
     def set_quantity(self,newquantity):
         return Order(newquantity,self.ID,self.prix,self.type_ordre)
+<<<<<<< HEAD
+=======
+    
+
+
+def main():
+    book = Book("TEST")
+    book.insert_buy(10, 10.0)
+    book.insert_sell(120, 12.0)
+    book.insert_buy(5, 10.0)
+    book.insert_buy(2, 11.0)
+    book.insert_sell(1, 10.0)
+    book.insert_sell(10, 10.0)
+
+if __name__ == "__main__":
+    main()
+>>>>>>> pandas
