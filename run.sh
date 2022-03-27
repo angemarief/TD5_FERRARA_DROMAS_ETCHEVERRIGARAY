@@ -1,6 +1,7 @@
-if [[ -d ./.venv ]] ; then
-        source ./.venv/bin/activate
+if [[ -d ./.venv ]]
+then
+	source ./.venv/bin/activate
 	alias activate=". ../.env/bin/activate"
 	pipenv install -r requirements.txt
-	python3 main.py
-
+fi
+python3 main.py
