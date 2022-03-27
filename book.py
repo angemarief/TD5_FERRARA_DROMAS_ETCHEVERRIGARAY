@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-=======
 import pandas as pd
 import numpy as np
 
->>>>>>> pandas
 class Book:
-    
     def __init__(self,name,liste_order=[]):
         self.name=name
         self.liste_execute=[]
@@ -13,11 +9,6 @@ class Book:
         self.liste_buy=[]
         self.index=0
 
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> pandas
     def insert_buy (self,q,p, type_ordre="BUY"):
         self.index=self.index+1
         ordre=Order(q,self.index,p,type_ordre)
@@ -41,12 +32,6 @@ class Book:
             self.liste_execute.pop(i-1)
         print("Book on "+self.name)
         
-<<<<<<< HEAD
-        for i in self.liste_sell:
-            print("          "+str(i.type_ordre)+" "+ str(i.quantite) +"@"+str(i.prix) + " id="+str(i.ID))
-        for i in self.liste_buy:
-            print("          "+str(i.type_ordre)+" "+ str(i.quantite) +"@"+str(i.prix) + " id="+str(i.ID))
-=======
         liste_pandas_sell=[]
         for i in self.liste_sell:
             liste_pandas_sell.append([i.type_ordre,i.quantite,i.prix,i.ID])
@@ -61,7 +46,6 @@ class Book:
         if liste_pandas_buy!=[]:
             df2 = pd.DataFrame(np.array(liste_pandas_buy),columns=['type', 'quantity', 'price','ID'])
             print(df2.to_string(index=False))
->>>>>>> pandas
         print("----------------------------------")
 
     def check_execute(self):
@@ -96,8 +80,6 @@ class Order:
 
     def set_quantity(self,newquantity):
         return Order(newquantity,self.ID,self.prix,self.type_ordre)
-<<<<<<< HEAD
-=======
     
 
 
@@ -112,4 +94,4 @@ def main():
 
 if __name__ == "__main__":
     main()
->>>>>>> pandas
+
